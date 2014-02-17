@@ -226,6 +226,12 @@ class tx_realurl {
 				$GLOBALS['TT']->setTSlogMessage('RealURL is not enabled in TS setup. Finished.');
 				return;
 			}
+
+			// Return directly, if realurl is disabled by register:
+			if ($GLOBALS['TSFE']->register['tx_realurl_disable']) {
+				$GLOBALS['TT']->setTSlogMessage('RealURL is disabled by register setting. Finished.');
+				return;
+			}
 		}
 
 		// Checking prefix

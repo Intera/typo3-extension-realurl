@@ -352,8 +352,14 @@ class tx_realurl_advanced {
 	 * @param int $lang
 	 * @return array
 	 */
-	protected function IDtoPagePathThroughOverride($id, /** @noinspection PhpUnusedParameterInspection */ $mpvar, $lang) {
+	protected function IDtoPagePathThroughOverride($id, $mpvar, $lang) {
 		$result = false;
+
+		// If we are inside a mount mount we must never override the whole path.
+		if ($mpvar !== '') {
+			return $result;
+		}
+
 		$page = $this->getPage($id, $lang);
 		if ($page['tx_realurl_pathoverride']) {
 			if ($page['tx_realurl_pathsegment']) {

@@ -35,7 +35,6 @@ namespace DmitryDulepov\Realurl\Tests\Functional;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 use DmitryDulepov\Realurl\Configuration\ConfigurationReader;
-use DmitryDulepov\Realurl\Utility as RealurlUtility;
 
 /**
  * Testcase for class \DmitryDulepov\Realurl\Utility
@@ -56,11 +55,11 @@ class UtilityTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 
 		parent::setUp();
 
-		$GLOBALS['LANG'] = GeneralUtility::makeInstance(\TYPO3\CMS\Lang\LanguageService::class);
+		$GLOBALS['LANG'] = GeneralUtility::makeInstance('TYPO3\\CMS\\Lang\\LanguageService');
 		$GLOBALS['LANG']->init('default');
 
-		$this->configuration = GeneralUtility::makeInstance(ConfigurationReader::class, ConfigurationReader::MODE_DECODE);
-		$this->utility = GeneralUtility::makeInstance(RealurlUtility::class, $this->configuration);
+		$this->configuration = GeneralUtility::makeInstance('DmitryDulepov\\Realurl\\Configuration\\ConfigurationReader', ConfigurationReader::MODE_DECODE);
+		$this->utility = GeneralUtility::makeInstance('DmitryDulepov\\Realurl\\Utility', $this->configuration);
 	}
 
 	/**

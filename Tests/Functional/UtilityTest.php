@@ -51,7 +51,7 @@ class UtilityTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 	/**
 	 * Set up tests
 	 */
-	protected function setUp() {
+	public function setUp() {
 		$this->testExtensionsToLoad[] = 'typo3conf/ext/realurl/';
 
 		parent::setUp();

@@ -10,6 +10,7 @@ Page Tree:
 	- 1: Home
 		- 2: page2
 			- 5: subpage5-with-override (tx_realurl_pathoverride)
+			    - 10: subpage10-child-of-override
 			- 6: subpage6-with-alias (alias)
 			- 8: subpage8
 			- 9: 0 (Page with the title "0")
@@ -113,6 +114,17 @@ Page Tree:
 		<title>0</title>
 		<alias></alias>
 		<tx_realurl_pathsegment></tx_realurl_pathsegment>
+		<tx_realurl_pathoverride>0</tx_realurl_pathoverride>
+		<tx_realurl_exclude>0</tx_realurl_exclude>
+	</pages>
+	<pages>
+		<uid>10</uid>
+		<pid>5</pid>
+		<doktype>1</doktype>
+		<deleted>0</deleted>
+		<title>subpage10-child-of-override</title>
+		<alias/>
+		<tx_realurl_pathsegment/>
 		<tx_realurl_pathoverride>0</tx_realurl_pathoverride>
 		<tx_realurl_exclude>0</tx_realurl_exclude>
 	</pages>

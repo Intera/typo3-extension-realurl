@@ -183,6 +183,18 @@ class UrlEncoderTest extends \TYPO3\CMS\Core\Tests\FunctionalTestCase {
 	}
 
 	/**
+	 * Tests if the child page of a page with an overwritten page path uses that overwritten path as parent URL.
+	 *
+	 * @test
+	 */
+	public function testPathOverrideIsUsedForSubpages() {
+		$parameters = $this->getParametersForPage(10);
+		$encoder = GeneralUtility::makeInstance('DmitryDulepov\Realurl\Encoder\UrlEncoder');
+		$encoder->encodeUrl($parameters);
+		$this->assertEquals('page5-override/subpage10-child-of-override/', $parameters['LD']['totalURL']);
+	}
+
+	/**
 	 * @return TypoScriptFrontendController
 	 */
 	protected function getTypoScriptFrontendController() {

@@ -33,6 +33,7 @@ namespace DmitryDulepov\Realurl\Tests\Functional\Encoder;
  ***************************************************************/
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 /**
  * Testcase for class \DmitryDulepov\Realurl\Encoder\UrlEncoder

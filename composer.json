@@ -30,7 +30,6 @@
 	},
 	"autoload": {
 		"classmap": [
-			"apiwrappers/",
 			"modfunc1/",
 			"class.tx_realurl.php",
 			"class.tx_realurl_advanced.php",
